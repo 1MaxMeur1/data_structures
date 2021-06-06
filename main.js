@@ -110,3 +110,49 @@ class LinkedList {
 let ll = new LinkedList() //Declare LInkedList
 
 
+/*-------------------------------------REALIZATION OF STACK-----------------------------------*/
+
+
+class Stack {
+
+	constructor() {
+		this.items = []
+		this.count = 0
+	}
+
+	push(value) {
+		this.items[this.count] = value
+		this.count++
+	}
+
+	pop() {
+
+		if(this.count == 0) return null
+
+		let output = this.items[this.count - 1]
+		delete this.items[this.count]
+		this.count--
+		return output
+	}
+
+	length() {
+		return this.items.length
+	}
+
+	peak() {
+		return this.items[this.count - 1]
+	}
+}
+
+
+let st = new Stack()
+
+st.push(12)
+st.push(13)
+st.push(14)
+st.push(15)
+st.push(16)
+console.log(st.length())
+console.log(st.pop())
+console.log(st.length())
+console.log(st.peak())
