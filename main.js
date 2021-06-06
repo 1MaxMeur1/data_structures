@@ -147,12 +147,62 @@ class Stack {
 
 let st = new Stack()
 
-st.push(12)
-st.push(13)
-st.push(14)
-st.push(15)
-st.push(16)
-console.log(st.length())
-console.log(st.pop())
-console.log(st.length())
-console.log(st.peak())
+/*-------------------------------------REALIZATION OF QUEUE-----------------------------------*/
+
+
+class Queue {
+
+	construcor() {
+		this.collection = []
+	}
+
+	print() {
+		return this.collection
+	}
+
+	enqueue(value) {
+		this.collection.push(value)
+	}
+
+	dequeue() {
+		this.collection.shift()
+	}
+
+	front() {
+		return this.collection[0]
+	}
+
+	size() {
+		return this.collection.length
+	}
+
+	isEmpty() {
+		return this.collection.length === 0
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
