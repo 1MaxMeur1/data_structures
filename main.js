@@ -150,47 +150,83 @@ let st = new Stack()
 /*-------------------------------------REALIZATION OF QUEUE-----------------------------------*/
 
 
-class Queue {
+function Queue() { 
 
-	construcor() {
-		this.collection = []
-	}
+    let collection = [];
 
-	print() {
-		return this.collection
-	}
+    this.print = function() {
+        return collection
+    };
 
-	enqueue(value) {
-		this.collection.push(value)
-	}
+    this.enqueue = function(element) {
+        collection.push(element);
+    };
 
-	dequeue() {
-		this.collection.shift()
-	}
+    this.dequeue = function() {
+        return collection.shift(); 
+    };
 
-	front() {
-		return this.collection[0]
-	}
+    this.front = function() {
+        return collection[0];
+    };
 
-	size() {
-		return this.collection.length
-	}
+    this.size = function() {
+        return collection.length; 
+    };
 
-	isEmpty() {
-		return this.collection.length === 0
-	}
+    this.isEmpty = function() {
+        return (collection.length === 0); 
+    };
+
+}
+
+/*-------------------------------------REALIZATION OF RING QUEUE-----------------------------------*/
+
+function RingQueue () {
+
+    let list = [];
+
+    this.print = function() {
+        return list
+    };
+
+    this.enqueue = function(value) {
+        list.push(value);
+    };
+
+    this.dequeue = function() {
+    	let val = list[0]
+        list.shift();
+        list.push(val)
+    };
+
+    this.front = function() {
+        return list[0];
+    };
+
+    this.size = function() {
+        return list.length; 
+    };
+
+    this.isEmpty = function() {
+        return (list.length === 0); 
+    };
+
 }
 
 
-
-
-
-
-
-
-
-
-
+let ring = new RingQueue()
+ring.enqueue(1)
+ring.enqueue(2)
+ring.enqueue(3)
+ring.enqueue(4)
+ring.enqueue(5)
+console.log(ring.print())
+ring.dequeue()
+ring.dequeue()
+ring.dequeue()
+ring.dequeue()
+console.log(ring.print())
 
 
 
